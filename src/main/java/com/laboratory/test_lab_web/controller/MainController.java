@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
     @GetMapping("/")
     public String home() {
-        return "index";
+        return "main";
     }
     @GetMapping("/info")
     public String info() {
-        return "pageinfo";
+        return "ind121ex";
     }
     @GetMapping("/type")
     public String type() {
