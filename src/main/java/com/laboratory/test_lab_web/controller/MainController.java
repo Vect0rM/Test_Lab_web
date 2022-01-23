@@ -18,10 +18,6 @@ public class MainController {
     public String type() {
         return "offers";
     }
-    @GetMapping("/work")
-    public String work() {
-        return "works";
-    }
     @GetMapping("/avto")
     public String avto() {
         return "athoriz";
