@@ -12,15 +12,19 @@ public class MainController {
     }
     @GetMapping("/info")
     public String info() {
-        return "ind121ex";
+        return "info";
     }
-    @GetMapping("/type")
+    @GetMapping("/offers")
     public String type() {
-        return "pagetype";
+        return "offers";
     }
     @GetMapping("/work")
     public String work() {
-        return "pagework";
+        return "works";
+    }
+    @GetMapping("/avto")
+    public String avto() {
+        return "athoriz";
     }
 
 }
