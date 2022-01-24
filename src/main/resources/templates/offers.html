@@ -13,7 +13,6 @@
 </head>
 <header th:insert="blocks/header :: header"></header><main>
   <div class="container py-4">
-
     <div th:each="el : ${offers}" class="p-5 mb-4 bg-light rounded-3">
       <div class="container-fluid py-5">
         <h1 th:text="${el.name}" class="display-5 fw-bold"></h1>
