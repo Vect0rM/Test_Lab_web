@@ -1,7 +1,6 @@
 package com.laboratory.test_lab_web.config;
 
-
-/*
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -18,7 +17,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/").permitAll()
+                .antMatchers("/", "/main").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -35,10 +34,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         UserDetails user =
                 User.withDefaultPasswordEncoder()
                         .username("u")
-                        .password("1")
+                        .password("2")
                         .roles("USER")
                         .build();
 
         return new InMemoryUserDetailsManager(user);
     }
-}*/
+}

@@ -1,4 +1,4 @@
-/*package com.laboratory.test_lab_web.config;
+package com.laboratory.test_lab_web.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -11,4 +11,4 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/login").setViewName("login");
     }
 
-}*/
+}
