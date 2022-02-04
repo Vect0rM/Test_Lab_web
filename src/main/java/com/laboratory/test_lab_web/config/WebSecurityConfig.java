@@ -1,5 +1,7 @@
 package com.laboratory.test_lab_web.config;
 
+import com.laboratory.test_lab_web.ropository.RolesRepo;
+import com.laboratory.test_lab_web.ropository.UsersRepo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -13,6 +15,10 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    private RolesRepo rolesRepo;
+    private UsersRepo usersRepo;
+
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
