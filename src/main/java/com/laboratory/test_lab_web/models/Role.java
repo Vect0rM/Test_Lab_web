@@ -1,24 +1,29 @@
 package com.laboratory.test_lab_web.models;
 
-import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "Roles")
-public class Roles {
+@Table(name = "role")
+public class Role implements GrantedAuthority {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @Column(name = "name")
     private String name;
-
+    @Transient
     @ManyToMany(mappedBy = "roles")
-    private Set<Users> users;
+    private Set<User> users;
+    public Role() {
+    }
 
-    public Roles() {
+    public Role(Long id) {
+        this.id = id;
+    }
+
+    public Role(Long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public Long getId() {
@@ -37,11 +42,16 @@ public class Roles {
         this.name = name;
     }
 
-    public Set<Users> getUsers() {
+    public Set<User> getUsers() {
         return users;
     }
 
-    public void setUsers(Set<Users> users) {
+    public void setUsers(Set<User> users) {
         this.users = users;
+    }
+
+    @Override
+    public String getAuthority() {
+        return getName();
     }
 }
