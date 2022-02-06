@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MainController {
@@ -34,9 +35,14 @@ public class MainController {
     }
 
     @GetMapping("/orders")
-    public String orders() {
+    public String orders(Model model) {
+        Iterable<Offers> offers = offersRepo.findAll();
+        model.addAttribute("offers", offers);
         return "orders";
     }
 
-
+    @PostMapping("/orders")
+    public String ordersOffers(){
+        return "/";
+    }
 }

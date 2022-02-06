@@ -1,9 +1,7 @@
 package com.laboratory.test_lab_web.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Offers {
@@ -12,6 +10,13 @@ public class Offers {
     private long id;
 
     private String text, name;
+
+    @ManyToMany(mappedBy = "offers")
+    private Set<Orders> orders;
+
+    public Offers() {
+
+    }
 
     public long getId() {
         return id;
@@ -37,9 +42,14 @@ public class Offers {
         this.name = name;
     }
 
-    public Offers(){
-
+    public Set<Orders> getOrders() {
+        return orders;
     }
+
+    public void setOrders(Set<Orders> orders) {
+        this.orders = orders;
+    }
+
     public Offers(String name, String text) {
         this.name = name;
         this.text = text;
