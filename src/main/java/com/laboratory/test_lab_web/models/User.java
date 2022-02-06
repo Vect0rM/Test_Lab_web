@@ -26,6 +26,7 @@ public class User implements UserDetails {
     public User() {
     }
 
+
     public Long getId() {
         return id;
     }
@@ -93,4 +94,10 @@ public class User implements UserDetails {
         this.roles = roles;
     }
 
+    public User(String username, String password, String passwordConfirm, Set<Role> roles) {
+        this.username = username;
+        this.password = password;
+        this.passwordConfirm = passwordConfirm;
+        this.roles = roles;
+    }
 }

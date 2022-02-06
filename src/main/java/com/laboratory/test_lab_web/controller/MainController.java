@@ -32,10 +32,6 @@ public class MainController {
         model.addAttribute("offers", offers);
         return "offers";
     }
-    @GetMapping("/avto")
-    public String avto() {
-        return "athoriz";
-    }
 
     @GetMapping("/orders")
     public String orders() {
