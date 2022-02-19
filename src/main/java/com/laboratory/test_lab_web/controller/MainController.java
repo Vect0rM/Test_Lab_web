@@ -4,6 +4,7 @@ import com.laboratory.test_lab_web.models.Offers;
 import com.laboratory.test_lab_web.ropository.CertificatesRepo;
 import com.laboratory.test_lab_web.ropository.OffersRepo;
 import com.laboratory.test_lab_web.ropository.OrdersRepo;
+import com.laboratory.test_lab_web.ropository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -18,9 +19,10 @@ public class MainController {
     private OffersRepo offersRepo;
     private CertificatesRepo certificatesRepo;
     private OrdersRepo ordersRepo;
+    private UserRepo userRepo;
 
     @GetMapping("/")
-    public String home() {
+    public String home(Model model) {
         return "main";
     }
     @GetMapping("/info")
@@ -45,4 +47,5 @@ public class MainController {
     public String ordersOffers(){
         return "/";
     }
+
 }

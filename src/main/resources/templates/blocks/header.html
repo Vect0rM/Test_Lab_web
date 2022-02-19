@@ -13,14 +13,15 @@
                     <li><a href="/orders" class="nav-link px-2 text-white">Заказать</a></li>
                 </ul>
 
-                <div class="text-end">
+                <div sec:authorize="!hasRole('USER')" class="text-end">
                     <button onClick='location.href="/login"' class="btn btn-outline-light me-2">Войти</button>
                     <button onClick='location.href="/registration"' class="btn btn-warning">Зарегистрироваться</button>
                 </div>
 
                 <div sec:authorize="hasRole('USER')" class="text-end">
+
                     <form th:action="@{/logout}" method="post">
-                        <input class="btn btn-outline-light me-2" type="submit" value="Выйти"/>
+                        <input class="btn btn-warning me-2" type="submit" value="Выйти"/>
                     </form>
                 </div>
             </div>
