@@ -30,6 +30,7 @@ public class RegistrationController {
     public String registration(){
         return "registration";
     }
+
     @PostMapping("/registration")
     public String registrationUser(Model model, @RequestParam String username, @RequestParam String password){
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -37,12 +38,5 @@ public class RegistrationController {
         userRepo.save(user);
         return "redirect:/";
     }
-  /*  @PostMapping("/login")
-    public String Login(){
-        return "redirect:/";
-    }
-    @GetMapping ("/login")
-    public String LoginIn(){
-        return "login";
-    }*/
+
 }

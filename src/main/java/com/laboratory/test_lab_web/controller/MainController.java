@@ -17,9 +17,7 @@ public class MainController {
 
     @Autowired
     private OffersRepo offersRepo;
-    private CertificatesRepo certificatesRepo;
-    private OrdersRepo ordersRepo;
-    private UserRepo userRepo;
+
 
     @GetMapping("/")
     public String home(Model model) {
@@ -34,18 +32,6 @@ public class MainController {
         Iterable<Offers> offers = offersRepo.findAll();
         model.addAttribute("offers", offers);
         return "offers";
-    }
-
-    @GetMapping("/orders")
-    public String orders(Model model) {
-        Iterable<Offers> offers = offersRepo.findAll();
-        model.addAttribute("offers", offers);
-        return "orders";
-    }
-
-    @PostMapping("/orders")
-    public String ordersOffers(){
-        return "/";
     }
 
 }
