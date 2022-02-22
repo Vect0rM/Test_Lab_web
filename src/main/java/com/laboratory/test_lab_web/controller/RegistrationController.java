@@ -32,7 +32,7 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String registrationUser(Model model, @RequestParam String username, @RequestParam String password){
+    public String registrationUser( @RequestParam String username, @RequestParam String password){
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         User user = new User(username , passwordEncoder.encode(password), passwordEncoder.encode(password), Collections.singleton(new Role(1L, "ROLE_USER")));
         userRepo.save(user);
