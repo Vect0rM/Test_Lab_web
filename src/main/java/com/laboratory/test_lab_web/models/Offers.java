@@ -11,8 +11,6 @@ public class Offers {
 
     private String text, name;
 
-    @ManyToMany(mappedBy = "offers")
-    private Set<Orders> orders;
 
     public Offers() {
 
@@ -42,13 +40,6 @@ public class Offers {
         this.name = name;
     }
 
-    public Set<Orders> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(Set<Orders> orders) {
-        this.orders = orders;
-    }
 
     public Offers(String name, String text) {
         this.name = name;

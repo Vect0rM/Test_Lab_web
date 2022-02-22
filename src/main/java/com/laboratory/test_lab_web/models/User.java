@@ -23,6 +23,17 @@ public class User implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
 
+    public Set<Orders> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Orders> orders) {
+        this.orders = orders;
+    }
+
+    @ManyToMany(mappedBy = "users")
+    private Set<Orders> orders;
+
     public User() {
     }
 
@@ -100,4 +111,5 @@ public class User implements UserDetails {
         this.passwordConfirm = passwordConfirm;
         this.roles = roles;
     }
+
 }

@@ -47,9 +47,9 @@
 
             <div class="col-12">
               <label for="username" class="form-label">Логин</label>
-              <div class="input-group has-validation">
+              <div class="input-group has-validation" >
                 <span class="input-group-text">@</span>
-                <input type="text" name="username" class="form-control" id="username" placeholder="Логин" required>
+                <input type="text" name="username" class="form-control" id="username" placeholder="Логин" th:value="${NameOfUser}"  required>
               <div class="invalid-feedback">
                   Логин
                 </div>
@@ -58,7 +58,7 @@
 
             <div class="col-12">
               <label for="email" class="form-label">Email </label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <input type="email" class="form-control" id="email" placeholder="you@example.com" name="email">
               <div class="invalid-feedback">
                Введите Email.
               </div>
@@ -66,7 +66,7 @@
 
             <div class="col-12">
               <label for="address" class="form-label">Номер</label>
-              <input type="text" class="form-control" id="address" placeholder="+79119999999" required>
+              <input type="text" class="form-control" id="address" placeholder="+79119999999" name="num" required>
               <div class="invalid-feedback">
                 Введите номер.
               </div>
@@ -74,7 +74,7 @@
 
             <div class="col-md-5">
               <label for="country" class="form-label">Услуги</label>
-              <select class="form-select" id="country" required>
+              <select class="form-select" id="country" name="offer" required>
                 <option value="">Выберете</option>
                 <option th:each="el : ${offers}"
                 th:text="${el.name}"></option>
