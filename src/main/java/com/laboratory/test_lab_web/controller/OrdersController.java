@@ -31,7 +31,7 @@ public class OrdersController {
 
    public User FindUser(String username){
        User f1 = userRepo.findByUsername(username);
-        return new User(f1.getUsername(), f1.getPassword(), f1.getPasswordConfirm(),  Collections.singleton(new Role(1L, "ROLE_USER")));
+        return f1;
     }
 
     @Autowired
