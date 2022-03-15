@@ -2,7 +2,6 @@ package com.laboratory.test_lab_web.controller;
 
 import com.laboratory.test_lab_web.models.Offers;
 import com.laboratory.test_lab_web.models.Orders;
-import com.laboratory.test_lab_web.models.Role;
 import com.laboratory.test_lab_web.models.User;
 import com.laboratory.test_lab_web.ropository.OffersRepo;
 import com.laboratory.test_lab_web.ropository.OrdersRepo;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Collection;
 import java.util.Collections;
 
 
