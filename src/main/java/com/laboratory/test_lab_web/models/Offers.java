@@ -1,7 +1,6 @@
 package com.laboratory.test_lab_web.models;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 public class Offers {
@@ -41,8 +40,5 @@ public class Offers {
     }
 
 
-    public Offers(String name, String text) {
-        this.name = name;
-        this.text = text;
-    }
+
 }
